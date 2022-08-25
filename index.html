@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIKE RENTAL PREDICTION</title>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<h2>BIKE RENTAL PREDICTIVE ANALYSIS</h2>
+        <form action="{{ url_for('predict')}}" method="post">
+            <div class="body_form">
+                <div class="left_side">
+
+                    <h3>Year</h3>
+                    <input id="first" name="yr" type="number ">
+                    <br><br>
+                    <h3>What hour it is?</h3><input id="second" name="hr" required="required">
+                    <br><br>
+                    <h3>What is the temperature ?</h3><input id="third" name="temp" required="required">
+                    <br><br>
+                    <h3>What is the humidity?</h3><input id="fourth" name="hum" required="required">
+                    <br><br>
+                    <h3>What is the windspeed?</h3><input id="fifth" name="windspeed", required="required">
+
+                </div>
+                <div class="right_side">
+
+                    <h3>Mention the Month</h3><select name="mnth" id="dropdown" required="required">
+                        <option value=1>January</option>
+                        <option value=2>February</option>
+                        <option value=3>March</option>
+                        <option value=4>April</option>
+                        <option value=5>May</option>
+                        <option value=6>June</option>
+                        <option value=7>July</option>
+                        <option value=8>August</option>
+                        <option value=9>September</option>
+                        <option value=10>October</option>
+                        <option value=11>November</option>
+                        <option value=12>December</option>
+                    </select>
+                    <p/>
+                    <h3>What Season of the year?</h3><select name="season" id="dropdown" required="required">
+                        <option value=1>Spring</option>
+                        <option value=2>Summer</option>
+                        <option value=3>Fall</option>
+                        <option value=4>Winter</option>
+
+                    </select>
+                    <p/>
+                    <h3>Mention the Weather</h3><select name="weathersit" id="dropdown" required="required">
+                        <option value="1">Clear/ Few clouds/ Partly cloudy</option>
+                        <option value="2">Mist and Cloudy/ Mist and Broken clouds/ Mist and Few clouds/ Mist</option>
+                        <option value="3">Light Snow/ Light Rain, Thunderstorm and Scattered clouds/ Light Rain and Scattered clouds</option>
+                        <option value="4">Heavy Rain, Ice Pallets, Thunderstorm and Mist/ Snow and Fog</option>
+                    </select>
+                    <p/>
+                    <h3>Is it a Holiday?</h3><select name="holiday" id="dropdown" required="required">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                    <p/>
+
+                    <p></p><button id="sub" type="submit ">Calculate the Count of Bikes</button>
+                    <br>
+                </div>
+
+
+
+
+
+            </div>
+
+        </form>
+
+
+
+        <br><br><h3>{{pred}}<h3>
+
+
+
+
+    <style>
+        body {
+            text-align: left;
+            padding: 16px 32px;
+            background-color: #ffffff
+        }
+
+         label{
+            color: grey;
+            font-size: 30px;
+            display: inline-block;
+            text-align: right;
+            width: 300px
+        }
+
+        .body_form {
+            display: flex;
+        }
+
+        .left_side {
+
+            color: black;
+            width: 50%;
+            font-size: 20px;
+
+        }
+
+        .right_side {
+            color: black;
+            width: 50%;
+            font-size: 20px;
+        }
+
+        h3 {
+            font-weight: 10%;
+
+        }
+
+         h2 {
+            font-weight: 50%;
+            text-align: middle;
+
+        }
+
+
+
+        #box {
+            border-radius: 12px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+
+
+
+
+
+        #dropdown {
+            width: 240px;
+            height: 43px;
+            text-align: center;
+            border-radius: 12px;
+            font-size: 18px;
+        }
+
+
+
+        #sub {
+            height: 60px;
+            width: 240px;
+            margin: 64px 0px;
+            padding: 10px 16px;
+            text-align: center;
+            border-radius: 8px;
+            background-color: royalblue;
+            color: white;
+            font-size: 18px;
+        }
+
+        #sub:hover {
+            background-color: SlateBlue;
+            cursor:pointer;
+
+        }
+
+        #first {
+            border-radius: 4px;
+            height: 40px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #second {
+            border-radius: 4px;
+            height: 40px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #third {
+            border-radius: 4px;
+            height: 40px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #fourth {
+            border-radius: 4px;
+            height: 40px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #fifth {
+            border-radius: 4px;
+            height: 40px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+    </style>
+
+</body>
+
+</html>
